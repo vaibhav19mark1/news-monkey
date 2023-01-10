@@ -11,6 +11,8 @@ export class App extends Component {
     progress: 0
   }
 
+  apikey=import.meta.env.VITE_API_KEY;
+
   setProgress=(progress)=>{
     this.setState({progress: progress})
   }
@@ -26,13 +28,13 @@ export class App extends Component {
           />
           <Navbar />
           <Routes>
-            <Route path="/" element={<News setProgress={this.setProgress} category="general"  />} />
-            <Route path="/sports" element={<News setProgress={this.setProgress} key="sports" category="sports" />} />
-            <Route path="/business" element={<News setProgress={this.setProgress} key="business" category="business" />} />
-            <Route path="/entertainment" element={<News setProgress={this.setProgress} key="entertainment" category="entertainment" />} />
-            <Route path="/health" element={<News setProgress={this.setProgress} key="health" category="health" />} />
-            <Route path="/science" element={<News setProgress={this.setProgress} key="science" category="science" />} />
-            <Route path="/technology" element={<News setProgress={this.setProgress} key="technology" category="technology" />} />
+            <Route path="/" element={<News setProgress={this.setProgress} apikey={this.apikey} category="general"  />} />
+            <Route path="/sports" element={<News setProgress={this.setProgress} apikey={this.apikey} key="sports" category="sports" />} />
+            <Route path="/business" element={<News setProgress={this.setProgress} apikey={this.apikey} key="business" category="business" />} />
+            <Route path="/entertainment" element={<News setProgress={this.setProgress} apikey={this.apikey} key="entertainment" category="entertainment" />} />
+            <Route path="/health" element={<News setProgress={this.setProgress} apikey={this.apikey} key="health" category="health" />} />
+            <Route path="/science" element={<News setProgress={this.setProgress} apikey={this.apikey} key="science" category="science" />} />
+            <Route path="/technology" element={<News setProgress={this.setProgress} apikey={this.apikey} key="technology" category="technology" />} />
           </Routes>
         </Router>
       </div>
